@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D0612AA2C6A75EF001FE2DD /* CatchMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0612A92C6A75EF001FE2DD /* CatchMeApp.swift */; };
+		1D0612AC2C6A75EF001FE2DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0612AB2C6A75EF001FE2DD /* ContentView.swift */; };
+		1D0612AE2C6A75F0001FE2DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0612AD2C6A75F0001FE2DD /* Assets.xcassets */; };
+		1D0612B12C6A75F0001FE2DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0612B02C6A75F0001FE2DD /* Preview Assets.xcassets */; };
+		1D0612B92C6A7658001FE2DD /* QuizScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0612B82C6A7658001FE2DD /* QuizScreen.swift */; };
+		1D0612BD2C6A767A001FE2DD /* GameHomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0612BC2C6A767A001FE2DD /* GameHomeScreen.swift */; };
+		1D0612C02C6A768D001FE2DD /* ProfileMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0612BF2C6A768D001FE2DD /* ProfileMainScreen.swift */; };
+		1D0612C32C6A81F4001FE2DD /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0612C22C6A81F4001FE2DD /* Quiz.swift */; };
+		1D0612C72C6A82AD001FE2DD /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0612C62C6A82AD001FE2DD /* Alamofire */; };
+		1D0612C92C6A82AD001FE2DD /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 1D0612C82C6A82AD001FE2DD /* AlamofireDynamic */; };
+		1D0612CB2C6A84D5001FE2DD /* QuestionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0612CA2C6A84D5001FE2DD /* QuestionScreen.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D0612A62C6A75EF001FE2DD /* CatchMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatchMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D0612A92C6A75EF001FE2DD /* CatchMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchMeApp.swift; sourceTree = "<group>"; };
+		1D0612AB2C6A75EF001FE2DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1D0612AD2C6A75F0001FE2DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1D0612B02C6A75F0001FE2DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1D0612B82C6A7658001FE2DD /* QuizScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizScreen.swift; sourceTree = "<group>"; };
+		1D0612BC2C6A767A001FE2DD /* GameHomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHomeScreen.swift; sourceTree = "<group>"; };
+		1D0612BF2C6A768D001FE2DD /* ProfileMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainScreen.swift; sourceTree = "<group>"; };
+		1D0612C22C6A81F4001FE2DD /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		1D0612CA2C6A84D5001FE2DD /* QuestionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionScreen.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D0612A32C6A75EF001FE2DD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D0612C72C6A82AD001FE2DD /* Alamofire in Frameworks */,
+				1D0612C92C6A82AD001FE2DD /* AlamofireDynamic in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D06129D2C6A75EF001FE2DD = {
+			isa = PBXGroup;
+			children = (
+				1D0612A82C6A75EF001FE2DD /* CatchMe */,
+				1D0612A72C6A75EF001FE2DD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1D0612A72C6A75EF001FE2DD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D0612A62C6A75EF001FE2DD /* CatchMe.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1D0612A82C6A75EF001FE2DD /* CatchMe */ = {
+			isa = PBXGroup;
+			children = (
+				1D0612C12C6A81E4001FE2DD /* Models */,
+				1D0612B72C6A763F001FE2DD /* Screens */,
+				1D0612A92C6A75EF001FE2DD /* CatchMeApp.swift */,
+				1D0612AB2C6A75EF001FE2DD /* ContentView.swift */,
+				1D0612AD2C6A75F0001FE2DD /* Assets.xcassets */,
+				1D0612AF2C6A75F0001FE2DD /* Preview Content */,
+			);
+			path = CatchMe;
+			sourceTree = "<group>";
+		};
+		1D0612AF2C6A75F0001FE2DD /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1D0612B02C6A75F0001FE2DD /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1D0612B72C6A763F001FE2DD /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				1D0612BE2C6A7680001FE2DD /* profile */,
+				1D0612BB2C6A766B001FE2DD /* games */,
+				1D0612BA2C6A7661001FE2DD /* quiz */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		1D0612BA2C6A7661001FE2DD /* quiz */ = {
+			isa = PBXGroup;
+			children = (
+				1D0612B82C6A7658001FE2DD /* QuizScreen.swift */,
+				1D0612CA2C6A84D5001FE2DD /* QuestionScreen.swift */,
+			);
+			path = quiz;
+			sourceTree = "<group>";
+		};
+		1D0612BB2C6A766B001FE2DD /* games */ = {
+			isa = PBXGroup;
+			children = (
+				1D0612BC2C6A767A001FE2DD /* GameHomeScreen.swift */,
+			);
+			path = games;
+			sourceTree = "<group>";
+		};
+		1D0612BE2C6A7680001FE2DD /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				1D0612BF2C6A768D001FE2DD /* ProfileMainScreen.swift */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		1D0612C12C6A81E4001FE2DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1D0612C42C6A826C001FE2DD /* quiz */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1D0612C42C6A826C001FE2DD /* quiz */ = {
+			isa = PBXGroup;
+			children = (
+				1D0612C22C6A81F4001FE2DD /* Quiz.swift */,
+			);
+			name = quiz;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D0612A52C6A75EF001FE2DD /* CatchMe */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D0612B42C6A75F0001FE2DD /* Build configuration list for PBXNativeTarget "CatchMe" */;
+			buildPhases = (
+				1D0612A22C6A75EF001FE2DD /* Sources */,
+				1D0612A32C6A75EF001FE2DD /* Frameworks */,
+				1D0612A42C6A75EF001FE2DD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CatchMe;
+			packageProductDependencies = (
+				1D0612C62C6A82AD001FE2DD /* Alamofire */,
+				1D0612C82C6A82AD001FE2DD /* AlamofireDynamic */,
+			);
+			productName = CatchMe;
+			productReference = 1D0612A62C6A75EF001FE2DD /* CatchMe.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1D06129E2C6A75EF001FE2DD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1520;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					1D0612A52C6A75EF001FE2DD = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 1D0612A12C6A75EF001FE2DD /* Build configuration list for PBXProject "CatchMe" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1D06129D2C6A75EF001FE2DD;
+			packageReferences = (
+				1D0612C52C6A82AD001FE2DD /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = 1D0612A72C6A75EF001FE2DD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1D0612A52C6A75EF001FE2DD /* CatchMe */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D0612A42C6A75EF001FE2DD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D0612B12C6A75F0001FE2DD /* Preview Assets.xcassets in Resources */,
+				1D0612AE2C6A75F0001FE2DD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D0612A22C6A75EF001FE2DD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D0612C02C6A768D001FE2DD /* ProfileMainScreen.swift in Sources */,
+				1D0612AC2C6A75EF001FE2DD /* ContentView.swift in Sources */,
+				1D0612C32C6A81F4001FE2DD /* Quiz.swift in Sources */,
+				1D0612AA2C6A75EF001FE2DD /* CatchMeApp.swift in Sources */,
+				1D0612CB2C6A84D5001FE2DD /* QuestionScreen.swift in Sources */,
+				1D0612BD2C6A767A001FE2DD /* GameHomeScreen.swift in Sources */,
+				1D0612B92C6A7658001FE2DD /* QuizScreen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1D0612B22C6A75F0001FE2DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1D0612B32C6A75F0001FE2DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1D0612B52C6A75F0001FE2DD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CatchMe/Preview Content\"";
+				DEVELOPMENT_TEAM = 5WJ6D6989G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cagatayyildiz.CatchMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1D0612B62C6A75F0001FE2DD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"CatchMe/Preview Content\"";
+				DEVELOPMENT_TEAM = 5WJ6D6989G;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cagatayyildiz.CatchMe;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D0612A12C6A75EF001FE2DD /* Build configuration list for PBXProject "CatchMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D0612B22C6A75F0001FE2DD /* Debug */,
+				1D0612B32C6A75F0001FE2DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1D0612B42C6A75F0001FE2DD /* Build configuration list for PBXNativeTarget "CatchMe" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D0612B52C6A75F0001FE2DD /* Debug */,
+				1D0612B62C6A75F0001FE2DD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1D0612C52C6A82AD001FE2DD /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1D0612C62C6A82AD001FE2DD /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D0612C52C6A82AD001FE2DD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		1D0612C82C6A82AD001FE2DD /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1D0612C52C6A82AD001FE2DD /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 1D06129E2C6A75EF001FE2DD /* Project object */;
+}
