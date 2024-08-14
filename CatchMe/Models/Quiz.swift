@@ -15,13 +15,17 @@ struct Quiz : Codable{
 
 
 struct QuizDetail : Codable{
-    var _id : String = ""
-    var title : String = ""
-    var questions : [Question] = []
+    var question : Question = Question()
+    var answers : [Answer] = []
 }
 
 
 struct Question : Codable {
     var _id : String = ""
     var title : String = ""
+}
+
+struct Answer : Codable {
+    var _id : String = ""
+    var content : String = ""
 }
