@@ -41,7 +41,7 @@ struct QuestionScreen: View {
             }
         }
         .onAppear(){
-            let request = AF.request("http://localhost:3000/questions/quiz/\(quizId)")
+            let request = AF.request("https://goldfish-app-zjg23.ondigitalocean.app/questions/quiz/\(quizId)")
             
             request.responseDecodable(of: [QuizDetail].self){response in
                 quizDetail = response.value ?? []
