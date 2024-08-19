@@ -8,25 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var loginStatus = UserDefaults.standard.bool(forKey: "isLogin")
+    
+    
     var body: some View {
-        TabView{
-            
-            QuizScreen()
-                .tabItem {
-                    Image(systemName: "questionmark.circle.fill")
-                }
-            
-            GameHomeScreen()
-                .tabItem {
-                    Image(systemName: "gamecontroller.fill")
-                }
-            
-            ProfileMainScreen()
-                .tabItem {
-                    Image(systemName: "brain.head.profile")
-                }
-            
+        
+        if(loginStatus){
+                TabMain()
         }
+        else{
+                AuthScreen()
+        }
+        
+       
     }
 }
 
