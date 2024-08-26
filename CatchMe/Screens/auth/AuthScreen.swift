@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Alamofire
 
 struct AuthScreen: View {
     @State var email : String = ""
@@ -20,6 +21,22 @@ struct AuthScreen: View {
                 Button("Send"){
                     //burada email apiye gidiyor ve apiden response geldiğinde ConfirmCode ekranına gideceğiz
                     isActive = true
+                    
+                    let authModel : [String : Any] = [
+                                       "email" : email
+                                   ]
+                    
+                    
+                    AF.request("https://goldfish-app-zjg23.ondigitalocean.app/auth", method: .post, parameters: authModel, encoding: JSONEncoding.default).responseDecodable(of: AuthEMailResponseModel.self){response in
+                        if(response.response?.statusCode == 200){
+                            UserDefaults.standard.setValue(response.value?.id, forKey: "userId")
+                            isActive = true
+                        }
+                        else{
+                            
+                        }
+                    }
+                    
                 }
                  
                 NavigationLink(destination: ConfirmCodeScreen(), isActive: $isActive){
