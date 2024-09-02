@@ -18,10 +18,28 @@ struct ConfirmCodeScreen: View {
                 EmptyView()
             }
           
-            TextField("Confirm Code", text: $confirmCode)
+            Text("Enter Verification Code")
+                .font(.largeTitle)
+                .bold()
                 .padding()
-            Button("Send"){
-                var userId = UserDefaults.standard.string(forKey: "userId")
+                .frame(maxWidth: .infinity,alignment: .leading)
+                
+            Text("Enter code that we have sent to your email")
+                .frame(maxWidth: .infinity,alignment: .leading)
+                .padding(.horizontal)
+            
+            TextField("Confirm Code", text: $confirmCode)
+                .keyboardType(.numberPad) //sayı klavyesini açar
+                .padding()
+                .background(Color.black.opacity(0.08))
+                .cornerRadius(10)
+                .padding()
+            
+//            Text("Sayaç:0")
+//                .padding()
+            
+            Button(action: {
+                let userId = UserDefaults.standard.string(forKey: "userId")
                 let confirmParameter : [String : Any] = [
                     "confirmCode" : confirmCode,
                     "id":userId!
@@ -36,11 +54,26 @@ struct ConfirmCodeScreen: View {
                         print("Confirm code hatalı!")
                     }
                 }
-            }
-               
+            }, label: {
+                HStack{
+                   
+                    Text("Login")
+                        .bold()
+                }
+                .padding()
+                .padding(.horizontal,100)
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(10)
+                    
+                    
+            })
+
+            Spacer()
         }
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(false)
     }
+        
 }
 
 #Preview {

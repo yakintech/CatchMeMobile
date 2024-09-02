@@ -16,10 +16,35 @@ struct AuthScreen: View {
         NavigationView{
             
             VStack{
-                TextField("Email", text: $email)
-                    .padding()
-                Button("Send"){
+                
+                Text("Catch Me")
+                    .foregroundColor(.black)
+                    .font(.largeTitle)
+                    .bold()
+                   
+                ZStack{
+                    
+//                    Image("Image")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: 200,height: 200)
+//                        .cornerRadius(80)
+
+                }
+
+                HStack{
+                    Image(systemName: "envelope.fill")
+                        .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    TextField("Email", text: $email)
+                }
+                .padding()
+                .background(Color.black.opacity(0.08))
+                .cornerRadius(10)
+                .padding()
+                
+                Button {
                     //burada email apiye gidiyor ve apiden response geldiğinde ConfirmCode ekranına gideceğiz
+                    
                     isActive = true
                     
                     let authModel : [String : Any] = [
@@ -36,9 +61,19 @@ struct AuthScreen: View {
                             
                         }
                     }
-                    
+                } label: {
+                   HStack{
+                        Image(systemName: "paperplane.fill")
+                        Text("Send")
+                            .bold()
+                    }
+                    .padding()
+                    .padding(.horizontal,100)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
                 }
-                 
+           
                 NavigationLink(destination: ConfirmCodeScreen(), isActive: $isActive){
                     EmptyView()
                 }
