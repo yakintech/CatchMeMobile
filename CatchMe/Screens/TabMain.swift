@@ -14,16 +14,19 @@ struct TabMain: View {
             QuizScreen()
                 .tabItem {
                     Image(systemName: "questionmark.circle.fill")
+                    Text("Quiz")
                 }
             
             GameHomeScreen()
                 .tabItem {
                     Image(systemName: "gamecontroller.fill")
+                    Text("Game")
                 }
             
             ProfileMainScreen()
                 .tabItem {
                     Image(systemName: "brain.head.profile")
+                    Text("Profile")
                 }
             
         }
