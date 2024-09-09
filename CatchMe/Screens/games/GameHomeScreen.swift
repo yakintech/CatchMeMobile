@@ -7,9 +7,26 @@
 
 import SwiftUI
 
+struct Game: Identifiable {
+    let id = UUID()
+    let name: String
+    let game: AnyView
+}
+
 struct GameHomeScreen: View {
+    @State private var games: [Game] = [
+        Game(name: "Color Match", game: AnyView(ColorMatchGameScreen()))
+    ]
+    
     var body: some View {
-        Text("Hello, GameHomeScreen!")
+        NavigationView {
+                    List(games) { game in
+                        NavigationLink(destination: game.game) {
+                            Text(game.name)
+                        }
+                    }
+                    .navigationTitle("Games")
+                }
     }
 }
 
