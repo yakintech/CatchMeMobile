@@ -22,6 +22,7 @@
 		1DFCDCEA2C73BB9D00C32231 /* ConfirmCodeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCDCE92C73BB9D00C32231 /* ConfirmCodeScreen.swift */; };
 		1DFCDCEC2C73C08000C32231 /* TabMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DFCDCEB2C73C08000C32231 /* TabMain.swift */; };
 		29E242C42C862D11006CDFB3 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29E242C32C862D11006CDFB3 /* SplashScreen.swift */; };
+		2EDCD2672C8F61CE00EFB34B /* ColorMatchGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDCD2662C8F61CE00EFB34B /* ColorMatchGameScreen.swift */; };
 		BA0C8E052C86FB2B00111D38 /* CategoriesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C8E042C86FB2B00111D38 /* CategoriesScreen.swift */; };
 		BA0C8E082C86FB7200111D38 /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C8E072C86FB7200111D38 /* Categorie.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		1DFCDCE92C73BB9D00C32231 /* ConfirmCodeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmCodeScreen.swift; sourceTree = "<group>"; };
 		1DFCDCEB2C73C08000C32231 /* TabMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabMain.swift; sourceTree = "<group>"; };
 		29E242C32C862D11006CDFB3 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		2EDCD2662C8F61CE00EFB34B /* ColorMatchGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMatchGameScreen.swift; sourceTree = "<group>"; };
 		BA0C8E042C86FB2B00111D38 /* CategoriesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesScreen.swift; sourceTree = "<group>"; };
 		BA0C8E072C86FB7200111D38 /* Categorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +123,7 @@
 		1D0612BB2C6A766B001FE2DD /* games */ = {
 			isa = PBXGroup;
 			children = (
+				2EDCD2652C8F614500EFB34B /* ColorMatch */,
 				1D0612BC2C6A767A001FE2DD /* GameHomeScreen.swift */,
 			);
 			path = games;
@@ -175,6 +178,14 @@
 				29E242C32C862D11006CDFB3 /* SplashScreen.swift */,
 			);
 			path = splash;
+			sourceTree = "<group>";
+		};
+		2EDCD2652C8F614500EFB34B /* ColorMatch */ = {
+			isa = PBXGroup;
+			children = (
+				2EDCD2662C8F61CE00EFB34B /* ColorMatchGameScreen.swift */,
+			);
+			path = ColorMatch;
 			sourceTree = "<group>";
 		};
 		BA0C8E032C86FB0800111D38 /* categories */ = {
@@ -276,6 +287,7 @@
 				1D0612AA2C6A75EF001FE2DD /* CatchMeApp.swift in Sources */,
 				1D0612CB2C6A84D5001FE2DD /* QuestionScreen.swift in Sources */,
 				1DFCDCE82C73BB7D00C32231 /* AuthScreen.swift in Sources */,
+				2EDCD2672C8F61CE00EFB34B /* ColorMatchGameScreen.swift in Sources */,
 				1DDDFFA72C7CE8CE007D507A /* AuthEMailResponseModel.swift in Sources */,
 				1DFCDCEC2C73C08000C32231 /* TabMain.swift in Sources */,
 				1D0612BD2C6A767A001FE2DD /* GameHomeScreen.swift in Sources */,
