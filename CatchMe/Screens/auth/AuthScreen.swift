@@ -22,15 +22,6 @@ struct AuthScreen: View {
                     .font(.largeTitle)
                     .bold()
                    
-                ZStack{
-                    
-//                    Image("Image")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: 200,height: 200)
-//                        .cornerRadius(80)
-
-                }
 
                 HStack{
                     Image(systemName: "envelope.fill")
@@ -55,6 +46,7 @@ struct AuthScreen: View {
                     AF.request("https://goldfish-app-zjg23.ondigitalocean.app/auth", method: .post, parameters: authModel, encoding: JSONEncoding.default).responseDecodable(of: AuthEMailResponseModel.self){response in
                         if(response.response?.statusCode == 200){
                             UserDefaults.standard.setValue(response.value?.id, forKey: "userId")
+                            
                             isActive = true
                         }
                         else{

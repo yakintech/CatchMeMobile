@@ -8,8 +8,17 @@
 import SwiftUI
 
 struct ProfileMainScreen: View {
+    @State var isActive : Bool = false
+    @EnvironmentObject var authmodel : AuthModel
+    
     var body: some View {
-        Text("Hello, ProfileMainScreen!")
+        VStack{
+
+            Button("Log out"){
+                UserDefaults.standard.setValue(false, forKey: "isLogin")
+                authmodel.isLogin = false
+            }
+        }
     }
 }
 

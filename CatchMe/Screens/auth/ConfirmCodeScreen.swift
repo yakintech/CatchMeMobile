@@ -35,9 +35,7 @@ struct ConfirmCodeScreen: View {
                 .cornerRadius(10)
                 .padding()
             
-//            Text("Sayaç:0")
-//                .padding()
-            
+
             Button(action: {
                 let userId = UserDefaults.standard.string(forKey: "userId")
                 let confirmParameter : [String : Any] = [
@@ -46,8 +44,9 @@ struct ConfirmCodeScreen: View {
                 ]
  
                 //confirm code ve userid sini backende gönderiyorum. eğer doğruysa TAB açılacak!
-                AF.request("https://goldfish-app-zjg23.ondigitalocean.app/auth", method: .post, parameters: confirmParameter, encoding: JSONEncoding.default).responseDecodable(of: ConfirmCodeResponseModel.self){response in
+                AF.request("https://goldfish-app-zjg23.ondigitalocean.app/confirm", method: .post, parameters: confirmParameter, encoding: JSONEncoding.default).responseDecodable(of: ConfirmCodeResponseModel.self){response in
                     if(response.response?.statusCode == 200){
+                        UserDefaults.standard.setValue(true, forKey: "isLogin")
                         isActive = true;
                     }
                     else{

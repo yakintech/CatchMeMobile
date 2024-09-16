@@ -10,19 +10,26 @@ import SwiftUI
 struct ContentView: View {
     
     @State var loginStatus = UserDefaults.standard.bool(forKey: "isLogin")
-    
+    @StateObject var authmodel = AuthModel()
     
     var body: some View {
         
-        if(loginStatus){
-                TabMain()
+        VStack{
+            if(authmodel.isLogin){
+                    TabMain()
+            }
+            else{
+                   AuthScreen()
+            }
         }
-        else{
-                AuthScreen()
+        .environmentObject(authmodel)
+        .onAppear(){
+            authmodel.authControl()
         }
-        
-       
     }
+
+    
+    
 }
 
 #Preview {
