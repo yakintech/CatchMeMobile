@@ -10,7 +10,7 @@ struct ColorMatchGameScreen: View {
         ended
     }
         @State private var score = 0
-        @State private var highestScore = UserDefaults.standard.integer(forKey: "HighestScore")
+        @State private var highestScore = 0
         @State private var currentColor = ""
         @State private var colorText = ""
         @State private var currentGameStatus = gameStatus.initial
@@ -116,6 +116,9 @@ struct ColorMatchGameScreen: View {
                 }
             }
             .onAppear(perform: startNewRound)
+            .onAppear(perform: {
+                highestScore = UserDefaults.standard.integer(forKey: "HighestScore");
+            })
         }
         
         func startNewRound() {
