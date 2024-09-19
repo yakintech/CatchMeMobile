@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 import Alamofire
 
 struct ConfirmCodeScreen: View {
@@ -28,11 +29,16 @@ struct ConfirmCodeScreen: View {
                 .frame(maxWidth: .infinity,alignment: .leading)
                 .padding(.horizontal)
             
-            TextField("Confirm Code", text: $confirmCode)
+            SecureField("Confirm Code", text: $confirmCode)
                 .keyboardType(.numberPad) //sayı klavyesini açar
                 .padding()
                 .background(Color.black.opacity(0.08))
                 .cornerRadius(10)
+                .onReceive(Just(confirmCode)) { _ in
+                        if confirmCode.count > 4 {
+                            confirmCode = String(confirmCode.prefix(4))
+                        }
+                    }
                 .padding()
             
 
