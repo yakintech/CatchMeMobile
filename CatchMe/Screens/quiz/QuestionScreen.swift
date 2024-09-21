@@ -17,71 +17,94 @@ struct QuestionScreen: View {
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode> // Sayfayı kapatmak için
     
     var body: some View {
-        VStack(spacing: 20) {
-            if quizDetail.count > 0 {
-                // Soru başlığı
-                Text(quizDetail[questionNumber].question.title)
-                    .font(.headline)
-                    .padding()
-                    .multilineTextAlignment(.center)
+        ZStack {
+            Color(red: 0.95, green: 0.92, blue: 1.0)
+                .ignoresSafeArea()
+            Image("Image")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150)
+                .opacity(0.5)
+                .cornerRadius(12)
                 
-                
-                
-                // Cevap şıkları
-                ForEach(quizDetail[questionNumber].answers, id: \._id) { item in
-                    AnswerOptionView(content: item.content, isSelected: selectedAnswerId == item._id)
-                        .onTapGesture {
-                            selectedAnswerId = item._id
-                        }
-                        .padding(.horizontal)
-                }
-                
-                Spacer()
-                
-                // Butonlar
-                HStack {
+            VStack(spacing: 20) {
+                if quizDetail.count > 0 {
+                    // Soru başlığı
+                    Text(quizDetail[questionNumber].question.title)
+                        .font(.headline)
+                        .padding()
+                        .multilineTextAlignment(.center)
+                    
+                    
+                    
+                    // Cevap şıkları
+                    ForEach(quizDetail[questionNumber].answers, id: \._id) { item in
+                        AnswerOptionView(content: item.content, isSelected: selectedAnswerId == item._id)
+                            .onTapGesture {
+                                selectedAnswerId = item._id
+                            }
+                            .padding(.horizontal)
+                    }
+                    
                     Spacer()
                     
-                    // Eğer son sorudaysa
-                    if questionNumber == quizDetail.count - 1 {
-                        Button(action: {
-                            presentationMode.wrappedValue.dismiss() // quiz ekranına dön
+                    // Butonlar
+                    HStack {
+                        Spacer()
+                        
+                        // Eğer son sorudaysa
+                        if questionNumber == quizDetail.count - 1 {
+                            Button(action: {
+                                presentationMode.wrappedValue.dismiss() // quiz ekranına dön
+                            }) {
+                                Text("Finish")
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(Color.red)
+                                    .cornerRadius(10)
+                            }
+                        } else {
+                            Button(action: {
+                                // Sıradaki soru
+                                questionNumber += 1
+                                selectedAnswerId = nil
+                            }) {
+                                Text("Next")
+                                    .frame(maxWidth: .infinity)
+                                    .padding()
+                                    .foregroundColor(.white)
+                                    .background(Color.blue)
+                                    .cornerRadius(10)
+                            }
+                        }
+                        
+                        Spacer()
+                    }
+                    .padding(.horizontal)
+                    Button(action: {
+                            presentationMode.wrappedValue.dismiss() // quiz ekranına geri dön
                         }) {
-                            Text("Finish")
-                                .frame(maxWidth: .infinity)
-                                .padding()
+                            Text("Exit")
+                                
+                                .frame(width: 100,height: 40)
                                 .foregroundColor(.white)
                                 .background(Color.red)
+                                
                                 .cornerRadius(10)
+                                .shadow(radius: 5)
                         }
-                    } else {
-                        Button(action: {
-                            // Sıradaki soru
-                            questionNumber += 1
-                            selectedAnswerId = nil
-                        }) {
-                            Text("Next")
-                                .frame(maxWidth: .infinity)
-                                .padding()
-                                .foregroundColor(.white)
-                                .background(Color.blue)
-                                .cornerRadius(10)
+                } else {
+                    // loading..
+                    ProgressView("Loading Questions...")
+                        .onAppear {
+                            loadQuizDetails()
                         }
-                    }
-                    
-                    Spacer()
                 }
-                .padding(.horizontal)
-            } else {
-                // loading..
-                ProgressView("Loading Questions...")
-                    .onAppear {
-                        loadQuizDetails()
-                    }
             }
-        }
-        .padding()
+            .padding()
         .navigationBarBackButtonHidden(true)
+        }
     }
     
     private func loadQuizDetails() {
