@@ -19,7 +19,7 @@ struct ContentView: View {
                     TabMain()
             }
             else{
-                   QuizScreen()
+                   AuthScreen()
             }
         }
         .environmentObject(authmodel)

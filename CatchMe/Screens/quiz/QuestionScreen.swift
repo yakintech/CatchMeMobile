@@ -13,6 +13,7 @@ struct QuestionScreen: View {
     var quizId: String
     @State var quizDetail: [QuizDetail] = []
     @State var questionNumber: Int = 0
+    @State private var showCustomDialog: Bool = false
     @State var selectedAnswerId: String? = nil
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode> // Sayfayı kapatmak için
     
@@ -64,26 +65,31 @@ struct QuestionScreen: View {
                                     .background(Color.red)
                                     .cornerRadius(10)
                             }
+                            .disabled(selectedAnswerId == nil)
                         } else {
                             Button(action: {
                                 // Sıradaki soru
                                 questionNumber += 1
                                 selectedAnswerId = nil
+                                
                             }) {
                                 Text("Next")
                                     .frame(maxWidth: .infinity)
                                     .padding()
                                     .foregroundColor(.white)
-                                    .background(Color.blue)
+                                    .background((selectedAnswerId != nil) ?    Color.purple : Color.gray)
                                     .cornerRadius(10)
+                                .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)                           
                             }
+                            .disabled(selectedAnswerId == nil)
                         }
                         
                         Spacer()
                     }
                     .padding(.horizontal)
                     Button(action: {
-                            presentationMode.wrappedValue.dismiss() // quiz ekranına geri dön
+                        showCustomDialog = true
+                            
                         }) {
                             Text("Exit")
                                 
@@ -101,9 +107,28 @@ struct QuestionScreen: View {
                             loadQuizDetails()
                         }
                 }
+                
             }
+            .disabled(showCustomDialog)
+            
             .padding()
         .navigationBarBackButtonHidden(true)
+            if showCustomDialog {
+                CustomDialogView(
+                    title: "Teste Bitirmek İstediğinize Emin Misiniz?",
+                    description: "Bu testi kapatırsanız cevaplarınız kaydedilmeyecektir!",
+                    primaryButtonText: "Evet",
+                    secondaryButtonText: "Hayır",
+                    onPrimaryButtonTapped: {
+                        showCustomDialog = false
+                        presentationMode.wrappedValue.dismiss() // quiz ekranına geri dön
+                        
+                    },
+                    onSecondaryButtonTapped: {
+                        showCustomDialog = false
+                    }
+                )
+            }
         }
     }
     
