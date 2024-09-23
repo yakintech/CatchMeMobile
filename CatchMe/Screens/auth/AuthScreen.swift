@@ -13,6 +13,8 @@ struct AuthScreen: View {
     @State var isActive: Bool = false
     @State var showAlert = false
     @State var alertMessage: String = ""
+    
+    @EnvironmentObject var authModel: AuthModel
 
     var body: some View {
         
@@ -48,11 +50,13 @@ struct AuthScreen: View {
                     } else {
                         isActive = true
                         
-                        let authModel: [String: Any] = [
+                        let authParameter: [String: Any] = [
                             "email": email
                         ]
                         
-                        AF.request("https://goldfish-app-zjg23.ondigitalocean.app/auth", method: .post, parameters: authModel, encoding: JSONEncoding.default).responseDecodable(of: AuthEMailResponseModel.self) { response in
+                        let url = "\(authModel.baseURL)/auth"
+                        
+                        AF.request(url, method: .post, parameters: authParameter, encoding: JSONEncoding.default).responseDecodable(of: AuthEMailResponseModel.self) { response in
                             if response.response?.statusCode == 200 {
                                 UserDefaults.standard.setValue(response.value?.id, forKey: "userId")
                                 isActive = true

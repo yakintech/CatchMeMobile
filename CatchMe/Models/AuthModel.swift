@@ -10,6 +10,7 @@ import Foundation
 class AuthModel : ObservableObject {
     @Published var isLogin : Bool = false
     
+    let baseURL: String = "https://goldfish-app-zjg23.ondigitalocean.app"
     
     func authControl(){
         let isLogin = UserDefaults.standard.bool(forKey: "isLogin")

@@ -12,6 +12,9 @@ import Alamofire
 struct ConfirmCodeScreen: View {
     @State var confirmCode : String = ""
     @State var isActive : Bool = false
+    
+    @EnvironmentObject var authModel: AuthModel
+    
     var body: some View {
         VStack{
             
@@ -49,8 +52,10 @@ struct ConfirmCodeScreen: View {
                     "id":userId!
                 ]
  
+                let url = "\(authModel.baseURL)/confirm"
+                
                 //confirm code ve userid sini backende gönderiyorum. eğer doğruysa TAB açılacak!
-                AF.request("https://goldfish-app-zjg23.ondigitalocean.app/confirm", method: .post, parameters: confirmParameter, encoding: JSONEncoding.default).responseDecodable(of: ConfirmCodeResponseModel.self){response in
+                AF.request(url, method: .post, parameters: confirmParameter, encoding: JSONEncoding.default).responseDecodable(of: ConfirmCodeResponseModel.self){response in
                     if(response.response?.statusCode == 200){
                         UserDefaults.standard.setValue(true, forKey: "isLogin")
                         isActive = true;

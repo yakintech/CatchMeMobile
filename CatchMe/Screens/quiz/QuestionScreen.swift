@@ -17,6 +17,8 @@ struct QuestionScreen: View {
     @State var selectedAnswerId: String? = nil
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode> // Sayfayı kapatmak için
     
+    @EnvironmentObject var authModel: AuthModel
+    
     var body: some View {
         ZStack {
             Color(red: 0.95, green: 0.92, blue: 1.0)
@@ -133,9 +135,10 @@ struct QuestionScreen: View {
     }
     
     private func loadQuizDetails() {
-        let request = AF.request("https://goldfish-app-zjg23.ondigitalocean.app/questions/quiz/\(quizId)")
         
-        request.responseDecodable(of: [QuizDetail].self) { response in
+        let url = "\(authModel.baseURL)/questions/quiz/\(quizId)"
+        
+        AF.request(url).responseDecodable(of: [QuizDetail].self) { response in
             quizDetail = response.value ?? []
         }
     }
@@ -173,4 +176,5 @@ struct AnswerOptionView: View {
 
 #Preview {
     QuestionScreen(quizId: "66ba496ab73bed94392d09a2")
+        .environmentObject(AuthModel())
 }

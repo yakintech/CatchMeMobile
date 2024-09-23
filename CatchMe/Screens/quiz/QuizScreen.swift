@@ -8,6 +8,8 @@ struct QuizScreen: View {
     @State private var showCustomDialog: Bool = false
     @State private var navigateToQuestionScreen: Bool = false
     
+    @EnvironmentObject var authModel: AuthModel
+    
     var body: some View {
         ZStack {
             NavigationView {
@@ -66,9 +68,9 @@ struct QuizScreen: View {
                     }
                     .padding(.horizontal)
                     .onAppear(){
-                        let request = AF.request("https://goldfish-app-zjg23.ondigitalocean.app/quizzes")
+                        let url = "\(authModel.baseURL)/quizzes"
                         
-                        request.responseDecodable(of: [Quiz].self) { response in
+                        AF.request(url).responseDecodable(of: [Quiz].self) { response in
                             quizzes = response.value ?? []
                         }
                     }
@@ -151,4 +153,5 @@ struct CustomDialogView: View {
  
 #Preview {
     QuizScreen()
+        .environmentObject(AuthModel())
 }
