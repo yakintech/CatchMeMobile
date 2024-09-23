@@ -16,6 +16,7 @@
 		1D0612C02C6A768D001FE2DD /* ProfileMainScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0612BF2C6A768D001FE2DD /* ProfileMainScreen.swift */; };
 		1D0612C32C6A81F4001FE2DD /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0612C22C6A81F4001FE2DD /* Quiz.swift */; };
 		1D0612CB2C6A84D5001FE2DD /* QuestionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0612CA2C6A84D5001FE2DD /* QuestionScreen.swift */; };
+		1D7CF19B2CA1CD3100CB17ED /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CF19A2CA1CD3100CB17ED /* APIConfig.swift */; };
 		1DC3197F2C9895A90022C2F5 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DC3197E2C9895A90022C2F5 /* AuthModel.swift */; };
 		1DDDFFA72C7CE8CE007D507A /* AuthEMailResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DDDFFA62C7CE8CE007D507A /* AuthEMailResponseModel.swift */; };
 		1DFCDCE52C73ACFF00C32231 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 1DFCDCE42C73ACFF00C32231 /* Alamofire */; };
@@ -39,6 +40,7 @@
 		1D0612BF2C6A768D001FE2DD /* ProfileMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainScreen.swift; sourceTree = "<group>"; };
 		1D0612C22C6A81F4001FE2DD /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		1D0612CA2C6A84D5001FE2DD /* QuestionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionScreen.swift; sourceTree = "<group>"; };
+		1D7CF19A2CA1CD3100CB17ED /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		1DC3197E2C9895A90022C2F5 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		1DDDFFA62C7CE8CE007D507A /* AuthEMailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEMailResponseModel.swift; sourceTree = "<group>"; };
 		1DFCDCE72C73BB7C00C32231 /* AuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreen.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		1D0612A82C6A75EF001FE2DD /* CatchMe */ = {
 			isa = PBXGroup;
 			children = (
+				1D7CF1992CA1CD2400CB17ED /* Config */,
 				1D0612C12C6A81E4001FE2DD /* Models */,
 				1D0612B72C6A763F001FE2DD /* Screens */,
 				1D0612A92C6A75EF001FE2DD /* CatchMeApp.swift */,
@@ -156,6 +159,14 @@
 				1D0612C22C6A81F4001FE2DD /* Quiz.swift */,
 			);
 			name = quiz;
+			sourceTree = "<group>";
+		};
+		1D7CF1992CA1CD2400CB17ED /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				1D7CF19A2CA1CD3100CB17ED /* APIConfig.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 		1DDDFFA52C7CE8BC007D507A /* auth */ = {
@@ -287,6 +298,7 @@
 				1D0612C02C6A768D001FE2DD /* ProfileMainScreen.swift in Sources */,
 				1D0612AC2C6A75EF001FE2DD /* ContentView.swift in Sources */,
 				1D0612C32C6A81F4001FE2DD /* Quiz.swift in Sources */,
+				1D7CF19B2CA1CD3100CB17ED /* APIConfig.swift in Sources */,
 				1D0612AA2C6A75EF001FE2DD /* CatchMeApp.swift in Sources */,
 				1D0612CB2C6A84D5001FE2DD /* QuestionScreen.swift in Sources */,
 				1DFCDCE82C73BB7D00C32231 /* AuthScreen.swift in Sources */,
@@ -435,6 +447,7 @@
 				DEVELOPMENT_TEAM = FNLUK5NF66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CatchMe/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -464,6 +477,7 @@
 				DEVELOPMENT_TEAM = FNLUK5NF66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CatchMe/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

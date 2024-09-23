@@ -12,8 +12,6 @@ struct CategoriesScreen: View {
     
     @State var categories: [Categorie] = []
     
-    @EnvironmentObject var authModel: AuthModel
-    
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
@@ -95,7 +93,7 @@ struct CategoriesScreen: View {
     
     func fetchCategories() {
         
-        let url = "\(authModel.baseURL)/categories"
+        let url = "\(APIConfig.baseURL)/categories"
         
         AF.request(url).responseDecodable(of: [Categorie].self) { response in
             switch response.result {
@@ -110,5 +108,5 @@ struct CategoriesScreen: View {
 
 #Preview {
     CategoriesScreen()
-        .environmentObject(AuthModel())
+        
 }

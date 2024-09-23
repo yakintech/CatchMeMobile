@@ -52,7 +52,7 @@ struct ConfirmCodeScreen: View {
                     "id":userId!
                 ]
  
-                let url = "\(authModel.baseURL)/confirm"
+                let url = "\(APIConfig.baseURL)/confirm"
                 
                 //confirm code ve userid sini backende gönderiyorum. eğer doğruysa TAB açılacak!
                 AF.request(url, method: .post, parameters: confirmParameter, encoding: JSONEncoding.default).responseDecodable(of: ConfirmCodeResponseModel.self){response in

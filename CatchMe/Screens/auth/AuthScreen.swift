@@ -54,7 +54,7 @@ struct AuthScreen: View {
                             "email": email
                         ]
                         
-                        let url = "\(authModel.baseURL)/auth"
+                        let url = "\(APIConfig.baseURL)/auth"
                         
                         AF.request(url, method: .post, parameters: authParameter, encoding: JSONEncoding.default).responseDecodable(of: AuthEMailResponseModel.self) { response in
                             if response.response?.statusCode == 200 {

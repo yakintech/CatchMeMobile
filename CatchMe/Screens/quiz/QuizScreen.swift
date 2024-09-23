@@ -8,7 +8,6 @@ struct QuizScreen: View {
     @State private var showCustomDialog: Bool = false
     @State private var navigateToQuestionScreen: Bool = false
     
-    @EnvironmentObject var authModel: AuthModel
     
     var body: some View {
         ZStack {
@@ -68,7 +67,7 @@ struct QuizScreen: View {
                     }
                     .padding(.horizontal)
                     .onAppear(){
-                        let url = "\(authModel.baseURL)/quizzes"
+                        let url = "\(APIConfig.baseURL)/quizzes"
                         
                         AF.request(url).responseDecodable(of: [Quiz].self) { response in
                             quizzes = response.value ?? []
@@ -153,5 +152,5 @@ struct CustomDialogView: View {
  
 #Preview {
     QuizScreen()
-        .environmentObject(AuthModel())
+      
 }

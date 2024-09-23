@@ -11,7 +11,7 @@ struct ContentView: View {
     
     @State var loginStatus = UserDefaults.standard.bool(forKey: "isLogin")
     @StateObject var authmodel = AuthModel()
-    
+
     var body: some View {
         
         VStack{

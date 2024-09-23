@@ -15,9 +15,10 @@ struct QuestionScreen: View {
     @State var questionNumber: Int = 0
     @State private var showCustomDialog: Bool = false
     @State var selectedAnswerId: String? = nil
+    @State var selectedAnswers : [String] = []
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode> // Sayfayı kapatmak için
     
-    @EnvironmentObject var authModel: AuthModel
+
     
     var body: some View {
         ZStack {
@@ -58,7 +59,30 @@ struct QuestionScreen: View {
                         // Eğer son sorudaysa
                         if questionNumber == quizDetail.count - 1 {
                             Button(action: {
-                                presentationMode.wrappedValue.dismiss() // quiz ekranına dön
+                                let userId = UserDefaults.standard.string(forKey: "userId")
+                                
+                                selectedAnswers.append(selectedAnswerId!)
+                                
+                                
+                                let sessionParameters: [String: Any] = [
+                                    "userId": userId,
+                                    "answers": selectedAnswers
+                                ]
+                                
+                                
+                                //let url = "\(APIConfig.baseURL)/sessions"
+                                let url = "http://localhost:8080/sessions"
+                                
+                                AF.request(url, method: .post, parameters: sessionParameters, encoding: JSONEncoding.default).responseDecodable(of: SessionFinishResponseModel.self) { response in
+                                    
+                                    print(response.response?.statusCode)
+                                  
+                                    presentationMode.wrappedValue.dismiss()
+                                    
+                                }
+                                
+                                
+                               
                             }) {
                                 Text("Finish")
                                     .frame(maxWidth: .infinity)
@@ -70,6 +94,7 @@ struct QuestionScreen: View {
                             .disabled(selectedAnswerId == nil)
                         } else {
                             Button(action: {
+                                selectedAnswers.append(selectedAnswerId!)
                                 // Sıradaki soru
                                 questionNumber += 1
                                 selectedAnswerId = nil
@@ -136,7 +161,7 @@ struct QuestionScreen: View {
     
     private func loadQuizDetails() {
         
-        let url = "\(authModel.baseURL)/questions/quiz/\(quizId)"
+        let url = "\(APIConfig.baseURL)/questions/quiz/\(quizId)"
         
         AF.request(url).responseDecodable(of: [QuizDetail].self) { response in
             quizDetail = response.value ?? []
@@ -176,5 +201,10 @@ struct AnswerOptionView: View {
 
 #Preview {
     QuestionScreen(quizId: "66ba496ab73bed94392d09a2")
-        .environmentObject(AuthModel())
+     
+}
+
+
+struct SessionFinishResponseModel : Codable{
+    var id : String = ""
 }
