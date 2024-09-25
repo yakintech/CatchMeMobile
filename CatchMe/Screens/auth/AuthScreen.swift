@@ -57,6 +57,7 @@ struct AuthScreen: View {
                         let url = "\(APIConfig.baseURL)/auth"
                         
                         AF.request(url, method: .post, parameters: authParameter, encoding: JSONEncoding.default).responseDecodable(of: AuthEMailResponseModel.self) { response in
+            
                             if response.response?.statusCode == 200 {
                                 UserDefaults.standard.setValue(response.value?.id, forKey: "userId")
                                 isActive = true
@@ -65,6 +66,7 @@ struct AuthScreen: View {
                                 showAlert = true
                             }
                         }
+
                     }
                     
                 } label: {
