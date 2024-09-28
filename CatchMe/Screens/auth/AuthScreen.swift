@@ -7,6 +7,8 @@
 
 import SwiftUI
 import Alamofire
+import GoogleSignIn
+
 
 struct AuthScreen: View {
     @State var email: String = ""
@@ -38,6 +40,34 @@ struct AuthScreen: View {
                 .background(Color.black.opacity(0.08))
                 .cornerRadius(10)
                 .padding()
+                
+                Divider()
+                Text("or")
+                Divider()
+                Button("Gmail auth"){
+                    var result =
+                    Task{
+                        do{
+                          var result =  try  await GoogleSignInManager.shared.signInWithGoogle()
+                            print(result?.profile?.email)
+                            //burada gmail auth success oldugu için user emailini alıp apiye gönderiyorum!
+                            UserDefaults.standard.setValue(true, forKey: "isLogin")
+                            ///auth/gmail
+                            /////email /auth/gmail apisine post edilecek. GEriye bir id dönüyor bu id userSettingse kaydedilecek ve sonra ana sayfaya yönlenirme yapılacak
+                        }
+                        catch{
+                            
+                        }
+                    
+                    }
+                
+                }
+                    .padding()
+                Button("GMail signout"){
+                    GoogleSignInManager.shared.signOutFromGoogle()
+                }
+                    .padding()
+                
                 
                 Button {
                     // E-posta alanının boş olup olmadığı & format kontrolü
@@ -99,6 +129,8 @@ struct AuthScreen: View {
         let predicate = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return predicate.evaluate(with: email)
     }
+    
+
 }
 
 #Preview {

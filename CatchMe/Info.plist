@@ -4,5 +4,20 @@
 <dict>
 	<key>ApiUrl</key>
 	<string>https://goldfish-app-zjg23.ondigitalocean.app</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.966335362925-m7s01ins0972k8iej47emk3e1gkctbjb</string>
+			</array>
+		</dict>
+	</array>
+	<key>GIDClientID</key>
+	<string>966335362925-m7s01ins0972k8iej47emk3e1gkctbjb.apps.googleusercontent.com</string>
+	<key>theGIDClientID</key>
+	<string>asdasd</string>
 </dict>
 </plist>
