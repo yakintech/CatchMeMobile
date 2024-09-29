@@ -15,9 +15,10 @@ struct AuthScreen: View {
     @State var isActive: Bool = false
     @State var showAlert = false
     @State var alertMessage: String = ""
+    @State var goTabMain = false
     
     @EnvironmentObject var authModel: AuthModel
-
+    
     var body: some View {
         
         NavigationView {
@@ -48,25 +49,42 @@ struct AuthScreen: View {
                     var result =
                     Task{
                         do{
-                          var result =  try  await GoogleSignInManager.shared.signInWithGoogle()
+                            var result =  try  await GoogleSignInManager.shared.signInWithGoogle()
                             print(result?.profile?.email)
                             //burada gmail auth success oldugu için user emailini alıp apiye gönderiyorum!
                             UserDefaults.standard.setValue(true, forKey: "isLogin")
                             ///auth/gmail
                             /////email /auth/gmail apisine post edilecek. GEriye bir id dönüyor bu id userSettingse kaydedilecek ve sonra ana sayfaya yönlenirme yapılacak
-                        }
-                        catch{
+                            
+                            let authParams: [String: Any] = ["email": result?.profile?.email ?? ""]
+                            let authUrl = "\(APIConfig.baseURL)/auth/gmail"
+                            
+                            AF.request(authUrl, method: .post, parameters: authParams, encoding: JSONEncoding.default).responseDecodable(of: AuthEMailResponseModel.self){ response in
+                                if response.response?.statusCode == 200, let id = response.value?.id{
+                                    
+                                    UserDefaults.standard.setValue(id, forKey: "userId")
+                                    goTabMain = true
+                                    
+                                    
+                                }
+                                else{
+                                    print("Error")
+                                }
+                            }
                             
                         }
-                    
+                        catch{
+                            print(error.localizedDescription)
+                        }
+                        
                     }
-                
+                    
                 }
-                    .padding()
+                .padding()
                 Button("GMail signout"){
                     GoogleSignInManager.shared.signOutFromGoogle()
                 }
-                    .padding()
+                .padding()
                 
                 
                 Button {
@@ -87,7 +105,7 @@ struct AuthScreen: View {
                         let url = "\(APIConfig.baseURL)/auth"
                         
                         AF.request(url, method: .post, parameters: authParameter, encoding: JSONEncoding.default).responseDecodable(of: AuthEMailResponseModel.self) { response in
-            
+                            
                             if response.response?.statusCode == 200 {
                                 UserDefaults.standard.setValue(response.value?.id, forKey: "userId")
                                 isActive = true
@@ -96,7 +114,7 @@ struct AuthScreen: View {
                                 showAlert = true
                             }
                         }
-
+                        
                     }
                     
                 } label: {
@@ -118,6 +136,10 @@ struct AuthScreen: View {
                 NavigationLink(destination: ConfirmCodeScreen(), isActive: $isActive) {
                     EmptyView()
                 }
+                // Kullanıcı google hesabıyla giriş yaptığında TabMain() sayfasına gider
+                NavigationLink(destination: TabMain(), isActive: $goTabMain) {
+                    EmptyView()
+                }
             }
         }
     }
@@ -130,7 +152,7 @@ struct AuthScreen: View {
         return predicate.evaluate(with: email)
     }
     
-
+    
 }
 
 #Preview {
