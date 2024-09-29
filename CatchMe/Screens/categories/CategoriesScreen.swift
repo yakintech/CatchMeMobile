@@ -15,74 +15,54 @@ struct CategoriesScreen: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
-                HStack(spacing: 20) {
-                    if categories.indices.contains(0) {
+                
+                ForEach(0 ..< categories.count / 2, id: \.self) { index in
+                    HStack(spacing: 20) {
+                        
+                        // Sol buton
                         Button(action: {
-                            print(categories[0].name)
-                        }) {
-                            Text(categories[0].name)
+                            print(categories[index * 2].name)
+                        }, label: {
+                            Text(categories[index * 2].name)
                                 .frame(width: 130)
                                 .padding()
                                 .background(Color.cyan)
                                 .foregroundColor(.white)
                                 .cornerRadius(10)
-                        }
-                    }
-                    
-                    if categories.indices.contains(1) {
-                        Button(action: {
-                            print(categories[1].name)
-                        }) {
-                            Text(categories[1].name)
-                                .frame(width: 130)
-                                .padding()
-                                .background(Color.cyan)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
+                        })
+                        
+                        // Sağ buton
+                        if index * 2 + 1 < categories.count {
+                            Button(action: {
+                                print(categories[index * 2 + 1].name)
+                            }, label: {
+                                Text(categories[index * 2 + 1].name)
+                                    .frame(width: 130)
+                                    .padding()
+                                    .background(Color.cyan)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(10)
+                            })
                         }
                     }
                 }
                 
-                HStack(spacing: 20) {
-                    if categories.indices.contains(2) {
-                        Button(action: {
-                            print(categories[2].name)
-                        }) {
-                            Text(categories[2].name)
-                                .frame(width: 130)
-                                .padding()
-                                .background(Color.cyan)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }
-                    }
-                    
-                    if categories.indices.contains(3) {
-                        Button(action: {
-                            print(categories[3].name)
-                        }) {
-                            Text(categories[3].name)
-                                .frame(width: 130)
-                                .padding()
-                                .background(Color.cyan)
-                                .foregroundColor(.white)
-                                .cornerRadius(10)
-                        }
-                    }
-                }
-                
-                if categories.indices.contains(4) {
+                // Son eleman tek ise en alt ortada yerleştime
+                // Eğer yeni bir eleman gelirse bu kod çalışmayacak
+                if categories.count % 2 != 0 {
                     Button(action: {
-                        print(categories[4].name)
-                    }) {
-                        Text(categories[4].name)
+                        print(categories.last?.name ?? "No Category")
+                    }, label: {
+                        Text(categories.last?.name ?? "")
                             .frame(width: 130)
                             .padding()
                             .background(Color.cyan)
                             .foregroundColor(.white)
                             .cornerRadius(10)
-                    }
+                    })
+                    .frame(width: 130, alignment: .center)
                 }
+                
             }
             .padding()
             .onAppear {
@@ -92,7 +72,6 @@ struct CategoriesScreen: View {
     }
     
     func fetchCategories() {
-        
         let url = "\(APIConfig.baseURL)/categories"
         
         AF.request(url).responseDecodable(of: [Categorie].self) { response in
@@ -108,5 +87,4 @@ struct CategoriesScreen: View {
 
 #Preview {
     CategoriesScreen()
-        
 }

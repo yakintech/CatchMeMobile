@@ -19,7 +19,6 @@
 		1D7CF19B2CA1CD3100CB17ED /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CF19A2CA1CD3100CB17ED /* APIConfig.swift */; };
 		1D7CF1B72CA47CC100CB17ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CF1B62CA47CC100CB17ED /* AppDelegate.swift */; };
 		1D7CF1C92CA7E98B00CB17ED /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D7CF1C82CA7E98B00CB17ED /* GoogleSignInManager.swift */; };
-		1D7CF1CB2CA7EB8800CB17ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1D7CF1CA2CA7EB8800CB17ED /* GoogleService-Info.plist */; };
 		1D7CF1D12CA7EFE800CB17ED /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 1D7CF1D02CA7EFE800CB17ED /* FirebaseAnalytics */; };
 		1D7CF1D32CA7EFE800CB17ED /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 1D7CF1D22CA7EFE800CB17ED /* FirebaseAnalyticsOnDeviceConversion */; };
 		1D7CF1D52CA7EFE800CB17ED /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 1D7CF1D42CA7EFE800CB17ED /* FirebaseAnalyticsWithoutAdIdSupport */; };
@@ -67,6 +66,7 @@
 		2EDCD2672C8F61CE00EFB34B /* ColorMatchGameScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDCD2662C8F61CE00EFB34B /* ColorMatchGameScreen.swift */; };
 		BA0C8E052C86FB2B00111D38 /* CategoriesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C8E042C86FB2B00111D38 /* CategoriesScreen.swift */; };
 		BA0C8E082C86FB7200111D38 /* Categorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C8E072C86FB7200111D38 /* Categorie.swift */; };
+		BA108EF82CA94A2300EA9803 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA108EF72CA94A2300EA9803 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,7 +83,6 @@
 		1D7CF19A2CA1CD3100CB17ED /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		1D7CF1B62CA47CC100CB17ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1D7CF1C82CA7E98B00CB17ED /* GoogleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
-		1D7CF1CA2CA7EB8800CB17ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1DC3197E2C9895A90022C2F5 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		1DDDFFA62C7CE8CE007D507A /* AuthEMailResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthEMailResponseModel.swift; sourceTree = "<group>"; };
 		1DFCDCE72C73BB7C00C32231 /* AuthScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScreen.swift; sourceTree = "<group>"; };
@@ -93,6 +92,7 @@
 		2EDCD2662C8F61CE00EFB34B /* ColorMatchGameScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMatchGameScreen.swift; sourceTree = "<group>"; };
 		BA0C8E042C86FB2B00111D38 /* CategoriesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesScreen.swift; sourceTree = "<group>"; };
 		BA0C8E072C86FB7200111D38 /* Categorie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Categorie.swift; sourceTree = "<group>"; };
+		BA108EF72CA94A2300EA9803 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +147,7 @@
 		1D06129D2C6A75EF001FE2DD = {
 			isa = PBXGroup;
 			children = (
-				1D7CF1CA2CA7EB8800CB17ED /* GoogleService-Info.plist */,
+				BA108EF72CA94A2300EA9803 /* GoogleService-Info.plist */,
 				1D0612A82C6A75EF001FE2DD /* CatchMe */,
 				1D0612A72C6A75EF001FE2DD /* Products */,
 			);
@@ -414,7 +414,7 @@
 			files = (
 				1D0612B12C6A75F0001FE2DD /* Preview Assets.xcassets in Resources */,
 				1D0612AE2C6A75F0001FE2DD /* Assets.xcassets in Resources */,
-				1D7CF1CB2CA7EB8800CB17ED /* GoogleService-Info.plist in Resources */,
+				BA108EF82CA94A2300EA9803 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,7 +577,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CatchMe/Preview Content\"";
-				DEVELOPMENT_TEAM = 5WJ6D6989G;
+				DEVELOPMENT_TEAM = FNLUK5NF66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CatchMe/Info.plist;
@@ -586,12 +586,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cagatayyildiz.CatchMeMobile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ardanar.CatchMeMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -607,7 +608,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"CatchMe/Preview Content\"";
-				DEVELOPMENT_TEAM = 5WJ6D6989G;
+				DEVELOPMENT_TEAM = FNLUK5NF66;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = CatchMe/Info.plist;
@@ -616,12 +617,13 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.cagatayyildiz.CatchMeMobile;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ardanar.CatchMeMobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
