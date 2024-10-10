@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1423549F2CB7499900A04C7C /* ColorMindScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1423549E2CB7499900A04C7C /* ColorMindScreen.swift */; };
 		1D0612AA2C6A75EF001FE2DD /* CatchMeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0612A92C6A75EF001FE2DD /* CatchMeApp.swift */; };
 		1D0612AC2C6A75EF001FE2DD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D0612AB2C6A75EF001FE2DD /* ContentView.swift */; };
 		1D0612AE2C6A75F0001FE2DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D0612AD2C6A75F0001FE2DD /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1423549E2CB7499900A04C7C /* ColorMindScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMindScreen.swift; sourceTree = "<group>"; };
 		1D0612A62C6A75EF001FE2DD /* CatchMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CatchMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D0612A92C6A75EF001FE2DD /* CatchMeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatchMeApp.swift; sourceTree = "<group>"; };
 		1D0612AB2C6A75EF001FE2DD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1423549D2CB7498A00A04C7C /* ColorMind */ = {
+			isa = PBXGroup;
+			children = (
+				1423549E2CB7499900A04C7C /* ColorMindScreen.swift */,
+			);
+			path = ColorMind;
+			sourceTree = "<group>";
+		};
 		1D06129D2C6A75EF001FE2DD = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +220,7 @@
 		1D0612BB2C6A766B001FE2DD /* games */ = {
 			isa = PBXGroup;
 			children = (
+				1423549D2CB7498A00A04C7C /* ColorMind */,
 				2EDCD2652C8F614500EFB34B /* ColorMatch */,
 				1D0612BC2C6A767A001FE2DD /* GameHomeScreen.swift */,
 			);
@@ -444,6 +455,7 @@
 				1D0612B92C6A7658001FE2DD /* QuizScreen.swift in Sources */,
 				BA0C8E052C86FB2B00111D38 /* CategoriesScreen.swift in Sources */,
 				BA0C8E082C86FB7200111D38 /* Categorie.swift in Sources */,
+				1423549F2CB7499900A04C7C /* ColorMindScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

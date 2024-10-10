@@ -15,7 +15,8 @@ struct Game: Identifiable {
 
 struct GameHomeScreen: View {
     @State private var games: [Game] = [
-        Game(name: "Color Match", game: AnyView(ColorMatchGameScreen()))
+        Game(name: "Color Match", game: AnyView(ColorMatchGameScreen())),
+        Game(name: "Color Mind", game: AnyView(ColorMindScreen()))
     ]
     
     var body: some View {
