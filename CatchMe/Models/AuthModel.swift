@@ -10,7 +10,6 @@ import Foundation
 class AuthModel : ObservableObject {
     @Published var isLogin : Bool = false
     
-    
     func authControl(){
         let isLogin = UserDefaults.standard.bool(forKey: "isLogin")
         

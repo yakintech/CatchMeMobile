@@ -64,7 +64,7 @@ struct AuthScreen: View {
                                     
                                     UserDefaults.standard.setValue(id, forKey: "userId")
                                     goTabMain = true
-                                    
+                                    authModel.isLogin = true
                                     
                                 }
                                 else{

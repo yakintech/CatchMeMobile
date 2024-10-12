@@ -58,7 +58,8 @@ struct ConfirmCodeScreen: View {
                 AF.request(url, method: .post, parameters: confirmParameter, encoding: JSONEncoding.default).responseDecodable(of: ConfirmCodeResponseModel.self){response in
                     if(response.response?.statusCode == 200){
                         UserDefaults.standard.setValue(true, forKey: "isLogin")
-                        isActive = true;
+                        isActive = true
+                        authModel.isLogin = true
                     }
                     else{
                         print("Confirm code hatalı!")

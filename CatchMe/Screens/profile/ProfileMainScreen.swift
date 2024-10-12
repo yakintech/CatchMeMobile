@@ -7,6 +7,7 @@
 
 import SwiftUI
 import PhotosUI
+import GoogleSignIn
 
 struct ProfileMainScreen: View {
     @EnvironmentObject var authmodel : AuthModel
@@ -16,7 +17,9 @@ struct ProfileMainScreen: View {
         VStack {
             Button("Logout"){
                 UserDefaults.standard.setValue(false, forKey: "isLogin")
+                GIDSignIn.sharedInstance.signOut()
                 authmodel.isLogin = false
+                print(authmodel.isLogin)
                 
             }
             .padding()
